@@ -8,7 +8,9 @@ APlayerCharacterCpp::APlayerCharacterCpp()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	Scene = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
 	shootdamage = 50;
+	shootdistance = 500;
 }
 
 // Called when the game starts or when spawned
@@ -30,5 +32,10 @@ void APlayerCharacterCpp::SetupPlayerInputComponent(UInputComponent* PlayerInput
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void APlayerCharacterCpp::ShootFunction(FVector BulletLocation, FRotator BulletRotation)
+{
+	GetWorld()->SpawnActor<AActor>(BulletActor, BulletLocation, BulletRotation);	
 }
 

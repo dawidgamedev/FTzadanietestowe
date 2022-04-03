@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/SceneComponent.h"
 #include "PlayerCharacterCpp.generated.h"
 
 UCLASS()
@@ -20,6 +21,15 @@ public:
 		
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		int	shootdamage;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Bullet)
+		class USceneComponent* Scene;
+
+	UFUNCTION(BlueprintCallable)
+		void ShootFunction(FVector BulletLocation, FRotator BulletRotation);
+
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<class AActor> BulletActor;
 
 protected:
 	// Called when the game starts or when spawned

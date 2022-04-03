@@ -2,6 +2,7 @@
 
 
 #include "EnemyCharacterCpp.h"
+#include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
 // Sets default values
 AEnemyCharacterCpp::AEnemyCharacterCpp()
@@ -17,13 +18,21 @@ AEnemyCharacterCpp::AEnemyCharacterCpp()
 void AEnemyCharacterCpp::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	PlayerCharacter = Cast<APlayerCharacterCpp>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0)); 
 }
 
 // Called every frame
 void AEnemyCharacterCpp::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	if (EnemyHP < 1)
+	{
+		this->Destroy();
+		PlayerCharacter->KillCount++;
+		PlayerCharacter->NearestEnemyDistance = 100000;
+	}
 
 }
 

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "PlayerCharacterCpp.h"
 #include "EnemyCharacterCpp.generated.h"
 
 UCLASS()
@@ -20,6 +21,8 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		int EnemyHP;
+
+	APlayerCharacterCpp* PlayerCharacter; 
 
 protected:
 	// Called when the game starts or when spawned

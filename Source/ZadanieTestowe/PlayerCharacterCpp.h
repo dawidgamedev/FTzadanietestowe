@@ -22,6 +22,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		int	shootdamage;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+		bool bPlayerCanShoot;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Bullet)
 		class USceneComponent* Scene;
 
@@ -30,6 +33,12 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<class AActor> BulletActor;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		int KillCount;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadwrite)
+		float NearestEnemyDistance;
 
 protected:
 	// Called when the game starts or when spawned
@@ -42,4 +51,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private:
+	FTimerHandle ShootTimer;
+
+	void ShootTimerFunction();
 };

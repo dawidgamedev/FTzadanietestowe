@@ -10,7 +10,7 @@ APlayerCharacterCpp::APlayerCharacterCpp()
 	PrimaryActorTick.bCanEverTick = true;
 	Scene = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
 	shootdamage = 50;
-	shootdistance = 5000;
+	shootdistance = 1000;
 	bPlayerCanShoot = true;
 	KillCount = 0;
 	NearestEnemyDistance = 1000000;
@@ -41,7 +41,7 @@ void APlayerCharacterCpp::ShootFunction(FVector BulletLocation, FRotator BulletR
 {
 	GetWorld()->SpawnActor<AActor>(BulletActor, BulletLocation, BulletRotation);	
 	bPlayerCanShoot = false;
-	GetWorldTimerManager().SetTimer(ShootTimer, this, &APlayerCharacterCpp::ShootTimerFunction, 1.0f, false);
+	GetWorldTimerManager().SetTimer(ShootTimer, this, &APlayerCharacterCpp::ShootTimerFunction, 2.0f, false);
 }
 
 void APlayerCharacterCpp::ShootTimerFunction()

@@ -31,7 +31,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void ShootFunction(FVector BulletLocation, FRotator BulletRotation);
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TSubclassOf<class AActor> BulletActor;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

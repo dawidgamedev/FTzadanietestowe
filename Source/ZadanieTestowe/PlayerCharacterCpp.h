@@ -19,7 +19,7 @@ public:
 	APlayerCharacterCpp();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
-		int	shootdistance;
+		int	shootdistance;	
 		
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		int	shootdamage;

@@ -42,7 +42,7 @@ void APlayerCharacterCpp::SetupPlayerInputComponent(UInputComponent* PlayerInput
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-}
+}	
 
 void APlayerCharacterCpp::ShootFunction(FVector BulletLocation, FRotator BulletRotation)
 {

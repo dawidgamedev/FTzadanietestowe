@@ -25,8 +25,3 @@ void ASpawnEnemyBoxCpp::Tick(float DeltaTime)
 
 }
 
-void ASpawnEnemyBox::SpawnEnemy(FTransform EnemyLocation)
-{
-	
-}
-

@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Components/SceneComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "Engine/Engine.h"
 #include "PlayerCharacterCpp.generated.h"
 
 UCLASS()
@@ -36,6 +38,12 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		int KillCount;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+		int EnemiesCount;
+
+	UPROPERTY(BlueprintReadOnly)
+		bool bEndGame;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadwrite)
 		float NearestEnemyDistance;

@@ -12,15 +12,17 @@ APlayerCharacterCpp::APlayerCharacterCpp()
 	shootdamage = 50;
 	shootdistance = 1000;
 	bPlayerCanShoot = true;
+	bEndGame = false;
 	KillCount = 0;
 	NearestEnemyDistance = 1000000;
+	EnemiesCount = 3;
 }
 
 // Called when the game starts or when spawned
 void APlayerCharacterCpp::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -28,6 +30,11 @@ void APlayerCharacterCpp::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (KillCount == EnemiesCount)
+	{
+		GetCharacterMovement()->MaxWalkSpeed = 0;
+		bEndGame = true;
+	}
 }
 
 // Called to bind functionality to input

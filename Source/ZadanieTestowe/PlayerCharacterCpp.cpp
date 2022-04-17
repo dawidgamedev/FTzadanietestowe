@@ -13,6 +13,7 @@ APlayerCharacterCpp::APlayerCharacterCpp()
 	shootdistance = 1000;
 	bPlayerCanShoot = true;
 	bEndGame = false;
+	bEnemyDetected = false;
 	KillCount = 0;
 	NearestEnemyDistance = 1000000;
 	EnemiesCount = 3;

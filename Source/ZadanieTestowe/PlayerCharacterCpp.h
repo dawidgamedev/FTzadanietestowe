@@ -42,6 +42,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		int EnemiesCount;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+		bool bEnemyDetected;
+
 	UPROPERTY(BlueprintReadOnly)
 		bool bEndGame;
 

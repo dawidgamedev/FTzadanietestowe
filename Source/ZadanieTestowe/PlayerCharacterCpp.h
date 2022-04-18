@@ -45,6 +45,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		bool bEnemyDetected;
 
+
 	UPROPERTY(BlueprintReadOnly)
 		bool bEndGame;
 

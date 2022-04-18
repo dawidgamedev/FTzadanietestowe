@@ -32,6 +32,7 @@ void AEnemyCharacterCpp::Tick(float DeltaTime)
 		this->Destroy();
 		PlayerCharacter->KillCount++;
 		PlayerCharacter->NearestEnemyDistance = 100000;
+		PlayerCharacter->bEnemyDetected = false;
 	}
 
 }
